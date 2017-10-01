@@ -1,0 +1,17 @@
+{% block coinhive_captcha_widget %}
+{% spaceless %}
+<script src="https://coinhive.com/lib/captcha.min.js" async></script>
+
+<div class="coinhive-captcha"
+     data-hashes="1024"
+     data-key="NyzJaDRELrFtg4PNvkU4Wbo8hNNN2bVF"
+     data-autostart="false"
+     data-whitelabel="false"
+     data-disable-elements="input[type=submit]"
+     data-callback="myCaptchaCallback"
+>
+    <em>Loading Captcha...<br>
+        If it doesn't load, please disable Adblock!</em>
+</div>
+{% endspaceless %}
+{% endblock coinhive_captcha_widget %}

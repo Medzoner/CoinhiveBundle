@@ -1,0 +1,5 @@
+services:
+  coinhive_captcha.true:
+      class: 'CoinhiveBundle\Validator\IsTrueValidator'
+      tags:
+          - { name: 'validator.constraint_validator', alias: 'coinhive_captcha.true' }

@@ -1,0 +1,29 @@
+{
+  "name": "medzoner/coinhive-bundle",
+  "description": "This bundle provides Coinhive services. It does'nt depend of coinhive.com",
+  "keywords": ["captcha", "coinhiver", "monero"],
+  "homepage": "https://github.com/Medzoner/CoinhiveBundle",
+  "type": "symfony-bundle",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Mehdi Youb",
+      "email": "medzoner@medzoner.com",
+      "homepage": "https://medzoner.com/"
+    }
+  ],
+  "require": {
+    "php": ">=5.6",
+    "symfony/form": "^2.8 || ^3.0",
+    "symfony/validator": "^2.8 || ^3.0",
+    "symfony/framework-bundle": "^2.8 || ^3.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~5.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "CoinhiveBundle\\": "src"
+    }
+  }
+}
