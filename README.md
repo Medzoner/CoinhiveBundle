@@ -11,7 +11,7 @@ This bundle provides Coinhive services. It does'nt depend of coinhive.com
 To install CoinhiveBundle with Composer just type in your terminal:
 
 ```bash
-php composer.phar require medzoner/coinhivebundle
+php composer.phar require medzoner/coinhive-bundle
 ```
 
 Now, Composer will automatically download all required files, and install them
