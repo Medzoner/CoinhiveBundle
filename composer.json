@@ -23,7 +23,7 @@
   },
   "autoload": {
     "psr-4": {
-      "CoinhiveBundle\\": "src"
+      "Coinhive\\Bundle\\CoinhiveBundle\\": "src"
     }
   }
 }
