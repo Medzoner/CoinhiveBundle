@@ -1,6 +1,6 @@
 <?php
 
-namespace Coinhive\Bundle;
+namespace CoinhiveBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
