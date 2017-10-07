@@ -1,5 +1,18 @@
 services:
-  coinhive_captcha.true:
+  guzzle_client:
+      class: 'GuzzleHttp\Client'
+
+  coinhive_captcha.validator:
       class: 'CoinhiveBundle\Validator\IsTrueValidator'
+      arguments:
+          - '@guzzle_client'
+          - ''
       tags:
-          - { name: 'validator.constraint_validator', alias: 'coinhive_captcha.true' }
+          - { name: 'validator.constraint_validator', alias: 'coinhive_captcha_validator' }
+
+  coinhive_captcha.form:
+      class: 'CoinhiveBundle\Form\CoinHiveCaptchaType'
+      arguments:
+          - ''
+      tags:
+          - { name: 'form.type' }

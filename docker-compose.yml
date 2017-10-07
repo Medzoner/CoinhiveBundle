@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+    #php
+    php-coinhive:
+        build: "."
+        container_name: "php-coinhive"
+        volumes:
+            - ".:/var/www/html"
+            - "~/.ssh:/root/.ssh"
+
+volumes:
+    db: {}

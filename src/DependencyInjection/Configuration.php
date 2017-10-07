@@ -16,7 +16,17 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $treeBuilder->root('coinhive');
+        $rootNode = $treeBuilder->root('coinhive');
+
+        $rootNode
+            ->children()
+            ->arrayNode('config')
+            ->children()
+            ->scalarNode('site_key')->end()
+            ->end()
+            ->end()
+            ->end()
+        ;
 
         return $treeBuilder;
     }

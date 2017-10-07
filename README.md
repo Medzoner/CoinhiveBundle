@@ -36,8 +36,9 @@ Add the following to your config file:
 ``` yaml
 # app/config/config.yml
 
-coinhive_captcha:
-    site_key:  your_site_key
+coinhive:
+    config:
+        site_key: '%coinhive.site_key%'
 ```
 
 **NOTE**: This Bundle lets the client browser choose the secure https or unsecure http API.

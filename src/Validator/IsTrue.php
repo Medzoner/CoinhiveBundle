@@ -22,6 +22,6 @@ class IsTrue extends Constraint
      */
     public function validatedBy()
     {
-        return 'coinhive_captcha.true';
+        return 'coinhive_captcha_validator';
     }
 }

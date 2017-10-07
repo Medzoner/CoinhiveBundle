@@ -3,9 +3,6 @@
 namespace CoinhiveBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\EmailType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -16,15 +13,13 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 class CoinHiveCaptchaType extends AbstractType
 {
     /**
-     * Build the registration form.
-     *
      * @param FormBuilderInterface $builder
-     * @param array                $options
+     * @param array $options
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('captcha', TextType::class)
+            ->add('coinhive-captcha-token', TextType::class)
         ;
     }
 
@@ -37,15 +32,17 @@ class CoinHiveCaptchaType extends AbstractType
             'compound' => true,
         ]);
     }
+
     /**
-     * {@inheritdoc}
+     * @return string
      */
     public function getParent()
     {
         return TextType::class;
     }
+
     /**
-     * {@inheritdoc}
+     * @return string
      */
     public function getBlockPrefix()
     {
@@ -53,8 +50,6 @@ class CoinHiveCaptchaType extends AbstractType
     }
 
     /**
-     * Get the form name.
-     *
      * @return string
      */
     public function getName()

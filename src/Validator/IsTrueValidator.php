@@ -1,30 +1,67 @@
 <?php
 namespace CoinhiveBundle\Validator;
 
+use GuzzleHttp\ClientInterface;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 
+/**
+ * Class IsTrueValidator
+ */
 class IsTrueValidator extends ConstraintValidator
 {
     /**
-     *
+     * @var
      */
-    public function __construct()
+    private $siteKey;
+
+    /**
+     * @var ClientInterface
+     */
+    private $client;
+
+    /**
+     * @param ClientInterface $client
+     * @param $siteKey
+     */
+    public function __construct(
+        ClientInterface $client,
+        $siteKey
+    )
     {
 
+        $this->siteKey = $siteKey;
+        $this->client = $client;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function validate($value, Constraint $constraint)
+    public function validate($token, Constraint $constraint)
     {
-        //curl -X POST \
-    //-d "token=<coinhive-captcha-token>" \
-    //-d "hashes=1024" \
-    //-d "secret=<secret-key>" \
-    //"https://api.coinhive.com/token/verify"
-        if (!isset($value['captcha']) || !$value['captcha']) {
+        if (!isset($token['coinhive-captcha-token']) || !$token['coinhive-captcha-token']) {
+            $this->context->addViolation($constraint->message);
+        }
+
+        $res = $this->client
+            ->request(
+                'POST',
+                'https://api.coinhive.com/token/verify',
+                [
+                    'headers' => [
+                        'hashes'     => 256,
+                        'secret'     => $this->siteKey,
+                        'token'     => $token['coinhive-captcha-token']
+                    ]
+                ]
+            )
+            ->getBody()
+            ->getContents()
+        ;
+
+        $res = json_decode($res, true);
+
+        if (!$res || !isset($res['success']) || !$res['success']) {
             $this->context->addViolation($constraint->message);
         }
     }

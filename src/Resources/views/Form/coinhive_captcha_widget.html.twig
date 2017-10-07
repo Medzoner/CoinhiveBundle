@@ -1,10 +1,16 @@
 {% block coinhive_captcha_widget %}
 {% spaceless %}
+    {{ site_key }}
 <script src="https://coinhive.com/lib/captcha.min.js" async></script>
+    <script>
+        function myCaptchaCallback(token) {
+
+        }
+    </script>
 
 <div class="coinhive-captcha"
-     data-hashes="1024"
-     data-key="NyzJaDRELrFtg4PNvkU4Wbo8hNNN2bVF"
+     data-hashes="256"
+     data-key="{{ site_key }}"
      data-autostart="false"
      data-whitelabel="false"
      data-disable-elements="input[type=submit]"
