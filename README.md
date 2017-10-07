@@ -33,7 +33,7 @@ $bundles = array(
 
 Add the following to your config file:
 
-``` yaml
+```yaml
 # app/config/config.yml
 
 coinhive:
@@ -45,12 +45,12 @@ coinhive:
 
 Add the following to your config file:
 
-``` php
+```php
 <?php
 
 use CoinhiveBundle\Validator\IsTrue;
 
-....
+    //....
 
     /**
      * @param FormBuilderInterface $builder
@@ -68,7 +68,7 @@ use CoinhiveBundle\Validator\IsTrue;
         ;
     }
     
-    ...
+    //...
 ```
 
 ### Demo
