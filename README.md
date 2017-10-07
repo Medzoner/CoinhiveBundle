@@ -1,6 +1,6 @@
 # CoinhiveBundle
 
-[![Build Status](https://api.travis-ci.org/medzoner/CoinhiveBundle.svg)](https://travis-ci.org/medzoner/CoinhiveBundle)
+[![Build Status](https://api.travis-ci.org/Medzoner/CoinhiveBundle.svg)](https://travis-ci.org/medzoner/CoinhiveBundle)
 
 This bundle provides Coinhive services. It does'nt depend of coinhive.com
 
