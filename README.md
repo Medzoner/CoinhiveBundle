@@ -41,4 +41,36 @@ coinhive:
         site_key: '%coinhive.site_key%'
 ```
 
-**NOTE**: This Bundle lets the client browser choose the secure https or unsecure http API.
+### Step3: Configure the bundle's
+
+Add the following to your config file:
+
+``` php
+<?php
+
+use CoinhiveBundle\Validator\IsTrue;
+
+....
+
+    /**
+     * @param FormBuilderInterface $builder
+     * @param array                $options
+     */
+    public function buildForm(FormBuilderInterface $builder, array $options)
+    {
+        $builder
+            ->add('coinhive-captcha-token', CoinHiveCaptchaType::class, [
+                'mapped'      => false,
+                'constraints' => [
+                    new IsTrue()
+                ]
+            ])
+        ;
+    }
+    
+    ...
+```
+
+### Demo
+
+https://medzoner.com/contact
