@@ -23,3 +23,6 @@ RUN apt-get update && \
 
 RUN php -r "readfile('https://getcomposer.org/installer');" | php -- --install-dir=/usr/local/bin --filename=composer \
     && chmod +x /usr/local/bin/composer
+
+RUN pecl install channel://pecl.php.net/xdebug-2.4.1
+

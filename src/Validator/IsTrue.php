@@ -10,6 +10,7 @@ use Symfony\Component\Validator\Constraint;
 class IsTrue extends Constraint
 {
     public $message = 'This value is not a valid captcha.';
+
     /**
      * {@inheritdoc}
      */

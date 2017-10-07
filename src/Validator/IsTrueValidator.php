@@ -43,26 +43,28 @@ class IsTrueValidator extends ConstraintValidator
             $this->context->addViolation($constraint->message);
         }
 
-        $res = $this->client
-            ->request(
-                'POST',
-                'https://api.coinhive.com/token/verify',
-                [
-                    'headers' => [
-                        'hashes'     => 256,
-                        'secret'     => $this->siteKey,
-                        'token'     => $token['coinhive-captcha-token']
+        if (isset($token['coinhive-captcha-token']) && $token['coinhive-captcha-token']) {
+            $res = $this->client
+                ->request(
+                    'POST',
+                    'https://api.coinhive.com/token/verify',
+                    [
+                        'headers' => [
+                            'hashes'     => 256,
+                            'secret'     => $this->siteKey,
+                            'token'     => $token['coinhive-captcha-token']
+                        ]
                     ]
-                ]
-            )
-            ->getBody()
-            ->getContents()
-        ;
+                )
+                ->getBody()
+                ->getContents()
+            ;
 
-        $res = json_decode($res, true);
+            $res = json_decode($res, true);
 
-        if (!$res || !isset($res['success']) || !$res['success']) {
-            $this->context->addViolation($constraint->message);
+            if (!$res || !isset($res['success']) || !$res['success']) {
+                $this->context->addViolation($constraint->message);
+            }
         }
     }
 }

@@ -8,6 +8,10 @@ services:
         volumes:
             - ".:/var/www/html"
             - "~/.ssh:/root/.ssh"
+            - "./etc/php/7.0/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini"
+        environment:
+          XDEBUG_CONFIG: "remote_host=${XDEBUG_CONFIG_HOST} remote_port=${XDEBUG_CONFIG_PORT}"
+          PHP_IDE_CONFIG: "serverName=${PHP_IDE_CONFIG}"
 
 volumes:
     db: {}
