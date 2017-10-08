@@ -24,7 +24,7 @@ class CoinhiveExtension extends Extension
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('services.yml');
 
-        $def = $container->getDefinition('coinhive_miner.twig:');
+        $def = $container->getDefinition('coinhive_miner.twig');
         $def->replaceArgument(0, $config['config']['site_key']);
 
         $def = $container->getDefinition('coinhive_captcha.form');

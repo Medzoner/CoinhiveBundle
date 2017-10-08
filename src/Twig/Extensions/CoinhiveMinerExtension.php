@@ -47,7 +47,7 @@ class CoinhiveMinerExtension extends \Twig_Extension
     public function coinhiveMiner(Twig_Environment $env)
     {
         return $env->render(
-            'CoinhiveBundle:coinhive_miner.html.twig',
+            'CoinhiveBundle::coinhive_miner.html.twig',
             [
                 'site_key' => $this->siteKey,
             ]
