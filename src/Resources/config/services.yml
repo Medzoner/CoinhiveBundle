@@ -16,3 +16,10 @@ services:
           - ''
       tags:
           - { name: 'form.type' }
+
+  coinhive_miner.twig:
+      class: 'CoinhiveBundle\Twig\Extensions\CoinhiveMinerExtension'
+      arguments:
+          - ''
+      tags:
+          - { name: 'twig.extension' }
