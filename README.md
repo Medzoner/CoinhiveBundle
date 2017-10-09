@@ -41,9 +41,9 @@ coinhive:
         site_key: '%coinhive.site_key%'
 ```
 
-### Step3: Configure the bundle's
+### Step3a: Use captcha in form
 
-Add the following to your config file:
+Add the following to your formType file:
 
 ```php
 <?php
@@ -69,6 +69,14 @@ use CoinhiveBundle\Validator\IsTrue;
     }
     
     //...
+```
+
+### Step3b: Use miner on your site
+
+Add the following to your twig files:
+
+```html
+{{ coinhive_miner() }}
 ```
 
 ### Demo
