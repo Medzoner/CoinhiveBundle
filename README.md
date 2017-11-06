@@ -1,9 +1,9 @@
 # CoinhiveBundle
 
 [![Build Status](https://api.travis-ci.org/Medzoner/CoinhiveBundle.svg)](https://travis-ci.org/medzoner/CoinhiveBundle)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Medzoner/CoinhiveBundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Youshido/GraphQL/?branch=master)
-[![Code Coverage](https://scrutinizer-ci.com/g/Medzoner/CoinhiveBundle/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/Youshido/GraphQL/?branch=master)
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/69023c14-bb3b-4ae8-bf1a-31a7aa7bd228/mini.png)](https://insight.sensiolabs.com/projects/8b8ab2a2-32fb-4298-a986-b75ca523c7c9)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Medzoner/CoinhiveBundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Medzoner/CoinhiveBundle/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/Medzoner/CoinhiveBundle/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/Medzoner/CoinhiveBundle/?branch=master)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/69023c14-bb3b-4ae8-bf1a-31a7aa7bd228/mini.png)](https://insight.sensiolabs.com/projects/69023c14-bb3b-4ae8-bf1a-31a7aa7bd228)
 
 This bundle provides Coinhive services. It does'nt depend of coinhive.com
 
