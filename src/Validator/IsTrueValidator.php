@@ -35,14 +35,12 @@ class IsTrueValidator extends ConstraintValidator
     }
 
     /**
-     * {@inheritdoc}
+     * @param mixed $token
+     * @param Constraint $constraint
+     * @return bool
      */
     public function validate($token, Constraint $constraint)
     {
-        if (!isset($token['coinhive-captcha-token']) || !$token['coinhive-captcha-token']) {
-            $this->context->addViolation($constraint->message);
-        }
-
         if (isset($token['coinhive-captcha-token']) && $token['coinhive-captcha-token']) {
             $res = $this->client
                 ->request(
@@ -62,9 +60,11 @@ class IsTrueValidator extends ConstraintValidator
 
             $res = json_decode($res, true);
 
-            if (!$res || !isset($res['success']) || !$res['success']) {
-                $this->context->addViolation($constraint->message);
+            if ($res && isset($res['success']) && $res['success']) {
+                return false;
             }
         }
+
+        return $this->context->addViolation($constraint->message);
     }
 }
