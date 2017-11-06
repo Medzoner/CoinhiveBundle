@@ -11,7 +11,7 @@ services:
           - { name: 'validator.constraint_validator', alias: 'coinhive_captcha_validator' }
 
   coinhive_captcha.form:
-      class: 'CoinhiveBundle\Form\CoinHiveCaptchaType'
+      class: 'CoinhiveBundle\Form\Type\CoinHiveCaptchaType'
       arguments:
           - ''
       tags:

@@ -1,8 +1,8 @@
 <?php
 
-namespace Tests\Form;
+namespace Tests\Form\Type;
 
-use CoinhiveBundle\Form\CoinHiveCaptchaType;
+use CoinhiveBundle\Form\Type\CoinHiveCaptchaType;
 use Symfony\Component\Form\Test\TypeTestCase;
 
 /**
